@@ -36,10 +36,10 @@ public class CollectionTestSuite {
         List<Integer> numbers = new ArrayList<>();
         numbers.clear();
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        //When
-        numbers = oddNumbersExterminator.exterminate(numbers);
         List<Integer> emptyList = new ArrayList<>();
         emptyList.clear();
+        //When
+        numbers = oddNumbersExterminator.exterminate(numbers);
         //Then
         Assertions.assertEquals(emptyList, numbers);
     }
@@ -50,9 +50,9 @@ public class CollectionTestSuite {
         //Given
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        List<Integer> expectedList = Arrays.asList(2, 4, 6, 8, 10);
         //When
         numbers = oddNumbersExterminator.exterminate(numbers);
-        List<Integer> expectedList = Arrays.asList(2, 4, 6, 8, 10);
         //Then
         Assertions.assertEquals(expectedList, numbers);
     }
