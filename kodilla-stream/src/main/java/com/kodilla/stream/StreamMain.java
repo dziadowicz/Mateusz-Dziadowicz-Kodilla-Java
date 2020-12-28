@@ -1,6 +1,7 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
@@ -18,5 +19,8 @@ public class StreamMain {
         poemBeautifier.beautify("Seven for the Dwarf-lords in their halls of stone,", poem -> poem.toUpperCase());
         poemBeautifier.beautify("Nine for Mortal Men doomed to die,", poem -> poem.replace("o", "0"));
         poemBeautifier.beautify("One for the Dark Lord on his dark throne", poem -> poem.replace("Dark Lord", "Sauron"));
+
+        System.out.println("Using Stream to generate even numbers from 1 to 20");
+        NumbersGenerator.generateEven(20);
     }
 }
