@@ -25,7 +25,7 @@ public class FlightFinder {
             throw new RouteNotFoundException();
         } else {
             return airportAvailability.get(flight.getArrivalAirport());
-            }
+        }
     }
 }
 
