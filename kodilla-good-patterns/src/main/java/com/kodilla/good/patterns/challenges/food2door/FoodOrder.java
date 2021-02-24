@@ -4,10 +4,12 @@ public class FoodOrder {
 
     private Product product;
     private Quantity quantity;
+    private String supplier;
 
-    public FoodOrder(Product product, Quantity quantity) {
+    public FoodOrder(Product product, Quantity quantity, String supplier) {
         this.product = product;
         this.quantity = quantity;
+        this.supplier = supplier;
     }
 
     public Product getProduct() {
@@ -16,5 +18,9 @@ public class FoodOrder {
 
     public Quantity getQuantity() {
         return quantity;
+    }
+
+    public String getSupplier() {
+        return supplier;
     }
 }

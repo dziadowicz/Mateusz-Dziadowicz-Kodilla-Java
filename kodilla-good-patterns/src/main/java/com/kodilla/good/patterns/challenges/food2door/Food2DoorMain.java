@@ -5,8 +5,8 @@ public class Food2DoorMain {
     public static void main(String[] args) {
 
         FoodOrderRetriever foodOrderRetriever = new FoodOrderRetriever();
-        FoodOrder foodOrder = new FoodOrder(foodOrderRetriever.getProduct(), foodOrderRetriever.getQuantity());
-        FoodOrderService foodOrderService = new FoodOrderService(foodOrder, new ExtraFoodShop());
+        FoodOrder foodOrder = new FoodOrder(foodOrderRetriever.getProduct(), foodOrderRetriever.getQuantity(), foodOrderRetriever.getSupplier());
+        FoodOrderService foodOrderService = new FoodOrderService(foodOrder);
         if (foodOrderService.process().isOrdered()) {
             System.out.println("Order done successfully.");
         } else {
