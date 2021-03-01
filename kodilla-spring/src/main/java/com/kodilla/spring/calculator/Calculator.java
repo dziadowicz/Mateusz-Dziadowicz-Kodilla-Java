@@ -10,25 +10,37 @@ public final class Calculator {
     @Autowired
     private Display display;
 
-    public void add(double a, double b) {
+    public double add(double a, double b) {
         double result = a + b;
         display.displayValue(result);
+
+        return result;
     }
 
-    public void sub(double a, double b) {
+    public double sub(double a, double b) {
         double result = a - b;
         display.displayValue(result);
+
+        return result;
     }
 
-    public void mul(double a, double b) {
+    public double mul(double a, double b) {
         double result = a * b;
         display.displayValue(result);
+
+        return result;
     }
 
-    public void div(double a, double b) {
+    public double div(double a, double b) {
         if (b!=0) {
             double result = a / b;
             display.displayValue(result);
+
+            return result;
+        } else {
+            System.out.println("Divining by 0 is impossible.");
+
+            return 0;
         }
     }
 }
