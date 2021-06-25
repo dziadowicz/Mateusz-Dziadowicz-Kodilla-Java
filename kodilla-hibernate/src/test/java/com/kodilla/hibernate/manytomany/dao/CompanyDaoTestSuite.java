@@ -95,4 +95,38 @@ class CompanyDaoTestSuite {
 
         }
     }
+
+    @Test
+    void testRetrieveCompanyWithPartOfName() {
+        //Given
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+        Company greyMay = new Company("Grey May");
+
+        companyDao.save(softwareMachine);
+        int softwareMachineId = softwareMachine.getId();
+        companyDao.save(dataMaesters);
+        int dataMaestersId = dataMaesters.getId();
+        companyDao.save(greyMatter);
+        int greyMatterId = greyMatter.getId();
+        companyDao.save(greyMay);
+        int greyMayId = greyMay.getId();
+
+        //When
+        List<Company> companiesWithNameStartingWith = companyDao.retrieveCompanyByPartOfName("%Ma%");
+
+        //Then
+        assertEquals(4, companiesWithNameStartingWith.size());
+
+        //CleanUp
+        try {
+            companyDao.deleteById(softwareMachineId);
+            companyDao.deleteById(dataMaestersId);
+            companyDao.deleteById(greyMatterId);
+            companyDao.deleteById(greyMayId);
+        } catch (Exception e) {
+
+        }
+    }
 }

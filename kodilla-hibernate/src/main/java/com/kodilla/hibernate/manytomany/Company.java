@@ -12,8 +12,9 @@ import java.util.List;
 )
 
 @NamedQuery(
-        name = "Company.retrieveCompanyByPartOfLastname",
+        name = "Company.retrieveCompanyByPartOfName",
         query = "FROM Company WHERE name LIKE :NAMEPART"
+
 )
 
 @Entity
