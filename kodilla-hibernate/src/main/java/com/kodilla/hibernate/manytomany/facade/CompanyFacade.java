@@ -26,7 +26,7 @@ public class CompanyFacade {
 
     public List<Company> searchCompanyByNamePart(final String namePart) throws ProcessingException {
         LOGGER.info("Searching for company containing in name \"" + namePart + "\"");
-        List<Company> companiesContainingInName = companyDao.retrieveCompanyByPartOfName("%" + namePart + "%");
+        List<Company> companiesContainingInName = companyDao.retrieveCompanyByPartOfName(namePart);
         if (companiesContainingInName.size() == 0) {
             LOGGER.error(ProcessingException.ERR_NOT_FOUND_IN_DATABASE);
             throw new ProcessingException(ProcessingException.ERR_NOT_FOUND_IN_DATABASE);

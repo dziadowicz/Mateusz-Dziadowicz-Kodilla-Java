@@ -13,9 +13,11 @@ import java.util.List;
 
 @NamedQuery(
         name = "Company.retrieveCompanyByPartOfName",
-        query = "FROM Company WHERE name LIKE :NAMEPART"
-
+        query = "FROM Company WHERE name LIKE CONCAT('%',:NAMEPART,'%')"
 )
+
+
+
 
 @Entity
 @Table(name = "COMPANIES")

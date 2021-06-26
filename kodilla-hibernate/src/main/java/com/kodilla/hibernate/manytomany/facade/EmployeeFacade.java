@@ -26,7 +26,7 @@ public class EmployeeFacade {
 
     public List<Employee> searchEmployeeByLastnamePart(final String lastnamePart) throws ProcessingException {
         LOGGER.info("Searching for employee containing in lastname \"" + lastnamePart + "\"");
-        List<Employee> employeesContainingInLastname = employeeDao.retrieveEmployeesByPartOfLastname("%" + lastnamePart + "%");
+        List<Employee> employeesContainingInLastname = employeeDao.retrieveEmployeesByPartOfLastname(lastnamePart);
         if (employeesContainingInLastname.size() == 0) {
             LOGGER.error(ProcessingException.ERR_NOT_FOUND_IN_DATABASE);
             throw new ProcessingException(ProcessingException.ERR_NOT_FOUND_IN_DATABASE);

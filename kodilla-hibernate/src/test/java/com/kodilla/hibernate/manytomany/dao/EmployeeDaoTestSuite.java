@@ -104,7 +104,7 @@ public class EmployeeDaoTestSuite {
         int bobbySmithId = bobbySmith.getId();
 
         //When
-        List<Employee> employeesByLastname = employeeDao.retrieveEmployeesByPartOfLastname("%mi%");
+        List<Employee> employeesByLastname = employeeDao.retrieveEmployeesByPartOfLastname("mi");
 
         //Then
         assertEquals(2, employeesByLastname.size());

@@ -114,7 +114,7 @@ class CompanyDaoTestSuite {
         int greyMayId = greyMay.getId();
 
         //When
-        List<Company> companiesWithNameStartingWith = companyDao.retrieveCompanyByPartOfName("%Ma%");
+        List<Company> companiesWithNameStartingWith = companyDao.retrieveCompanyByPartOfName("Ma");
 
         //Then
         assertEquals(4, companiesWithNameStartingWith.size());
